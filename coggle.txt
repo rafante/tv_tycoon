@@ -1,0 +1,171 @@
+
+	TV Tycoon
+		Definir grade de programação
+			Criar Atração
+				Eventual
+					Dia
+					Horário Inicial
+				Semanal
+					Dias da Semana
+						Sexta
+						Quarta
+						Segunda
+						Sábado
+						Domingo
+						Terça
+						Quinta
+				Duração
+					120 min
+					60 min
+					20 min
+					15 min
+					30 min
+		Criar programa
+			Programa
+				Auditório
+				TeleJornal
+				Novela
+		Contratar atores
+			Atores
+				Salário mínimo
+				Skills
+				Fama
+				Especialidade
+					Comédia
+					Apresentador
+					Drama
+		Staff
+			Experiência
+				Constar o período trabalhado para outros jogadores
+			Cursos
+			Salário
+			Categoria
+				Geral
+				Limpeza
+				Segurança
+				Atores
+				Jornalistas
+	Workflow
+		Menu Principal
+			Sair
+			Iniciar
+				Pergunta se quer segir o tutorial
+					Sim
+						Nomear
+							Escolher Local Sede
+								Cidade pequena
+									Baixo custo tecnológico | Baixo custo de manutenção | Baixo custo salarial | Baixo custo de instalação | Baixo número de anunciantes | Baixa audiência | Baixa popularidade
+								Cidade média
+									Médio custo tecnológico | Médio custo de manutenção | Baixo custo salarial | Médio custo de instalação | Baixo número de anunciantes | Média audiência | Média popularidade
+								Capital
+									Alto custo tecnológico | Alto custo de manutenção | Médio custo salarial | Médio custo de instalação | Alto número de anunciantes | Alta audiência | Alta popularidade
+								Visualizar / Alterar grade de horários
+									Criar a primeira atração
+										Comprar direitos
+											Desenhos Robert Esponja - 14 eps
+												Selecionar os horários para exibição (máximo 3 por dia)
+									Criar segunda atração
+										Criar telejornal
+											Contratar Staff
+												Editor
+												Âncora
+												Repórter
+												Técnico
+											Escolher abordagem
+												Sensacionalista
+												Imparcial
+												Jornalismo de opinião
+												Esportivo
+												Celebridades e fofocas
+											Selecionar os horários para exibição (máximo 1 vez por dia)
+											Comprar itens
+												Computador para o técnico
+												Microfone para o repórter
+									Começar exibição
+										Criar série
+											Adicionar até 3 temas a mais
+											Animada
+												Contratar estúdio
+												2D
+													Contratar digitalizador
+													Contratar desenhista
+													Contratar dublador
+												3D
+													Contratar modelador 3D
+													Contratar Animador
+											Tema principal
+												Policial
+												Comédia
+												Drama
+												Ação
+												Suspense
+												Terror
+											Real
+												Criação manual de episódios
+													Criar cena
+														Foco
+															Ação
+															Comédia
+															Tensão
+															Romance
+														Criar cenário
+															Alocar objetos
+															Definir movimento de personagens
+															Criar expressão
+															Criar ação
+															Criar diálogo
+												Criação automática de episódios
+												Compra de objetos
+												Externo
+													Criar cenários internos
+													Escolher local externo
+														Público
+															Obter licença
+														Privado
+															Alugar espaço
+												Interno
+													Criar cenários internos
+												Staff
+													Técnico
+													Figurinista
+													Maqueador
+													Camera Man
+													Ator principal
+													Diretor
+													Cinegrafista
+													Coadjuvantes
+										Acompanhar as estatísticas
+											Aba de Programação própria
+												Acompanhar valor e demanda pelo horário comercial [#](#800002) [#](#2ec896)
+												Acompanhar audiência [#](#800002) [#](#2ec896)
+											Aba de programas de terceiros
+											Aba da concorrência
+											Perfil da audiência
+												Faixa etária
+												Sexo
+												Classe social (A | B | C | D | E)
+											Geral
+												Popularidade geral
+												Audiência em pontos
+												Valor médio do horário comercial
+										Acompanhar receitas e despesas
+											Receitas
+												Cota TV Assinatura
+												Doações
+												Receitas com propagandas
+													Horário comercial
+													Embutidas em programas próprios
+											Despesas
+												Custo de benefícios
+												Salários [#](#727887)
+												Custo de manutenção
+													Escritório
+													Segurança
+													Limpeza | Higiene
+												Custo tecnologico
+												Custo de direitos de exibição
+					Não
+			Opções
+Bloqueados até contratação de agências de pesquisa
+Programas com alta popularidade podem atrair empresas a comprarem anúncios embutidos
+Módulo: Criação de séries
