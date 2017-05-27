@@ -1,0 +1,16 @@
+TV Tycoon
+
+Slogan: Administre sua própria emissora de TV. Contrate atores, jornalistas, faxineiros, apresentadores, crie sua grade de programação. Desenvolva seus próprios conteúdos ou compre direitos de exibição. Venda horários de propaganda. Atraia investidores. Audiência é tudo. Entre na competição online contra jogadores no mundo todo ou em um mundo totalmente offline contra inteligência artificial. Torne-se o magnata da TV.
+
+Resumo: Crie um servidor (aberto a outros players ou fechado a amigos) ou junte-se a servidores de outros jogadores para competir pela audiência. Vale tudo nessa guerra pelos investidores. Crie novelas, programas de auditório ou culturais, documentários, séries ou compre conteúdo pago para reproduzir. Tente também comprar uma franquia de algum programa famoso de algum jogador. Crie um programa que fique famoso e venda sua franquia a outros jogadores. Escolha o ano para iniciar o servidor. Cada período trará uma determinada dificuldade. Dispute nos anos 70 a 80 em que não havia concorrência com a internet ou hos dias de hoje concorrendo com os youtubers. Você escolhe a dificuldade. Mas lembre-se, cada período terá suas facilidades e suas dificuldades. Períodos mais antigos tinham um custo técnico muito maior devido a falta de tecnologia. Invista em um ator para que ele fique famoso e aumente o valor das atrações que participa, mas cuidado! Quanto mais famoso, mais caro e exigente ele vai ficar, além de atrair mais a concorrência. Ofereça um salário melhor ou melhores condições para tentar atrair um ator/atriz famoso(a) de outro jogador para sua emissora. Jogue com as cartas que tiver.
+
+Descrição técnica: 
+
+Fase 1:
+
+Módulo Básico:
+Funcionalidades:
+	- Criar Emissora (nome, local)
+	- Alterar grade de horários - Grade já virá pré-preenchida para o jogador alterar caso queira
+	- Criar atração ( novela, telejornal, série, auditório, etc)
+	- Contratar funcionários
