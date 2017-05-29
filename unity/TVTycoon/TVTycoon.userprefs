@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\UI\UIFunctions.cs">
+    <Files>
+      <File FileName="Assets\Resources\Scripts\UI\UIFunctions.cs" Line="10" Column="26" />
+      <File FileName="Assets\Resources\Scripts\Management\GameManager.cs" Line="13" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\tv_tycoon\unity\TVTycoon\Assets\Resources\Scripts\UI\UIFunctions.cs" line="11" column="1" />
+      <RunToCursorBreakpoint file="C:\tv_tycoon\unity\TVTycoon\Assets\Resources\Scripts\UI\UIFunctions.cs" line="10" column="28" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
