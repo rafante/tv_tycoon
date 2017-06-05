@@ -28,7 +28,7 @@ public class IdentificationManager : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
 		{
 			tutorialCanvas.enabled = false;
-			backgroundCanvas.enabled = false;
+			//backgroundCanvas.enabled = false;
 		}
 	}
 
@@ -43,13 +43,12 @@ public class IdentificationManager : MonoBehaviour
 	public void setTVName(string name)
 	{
 		GameManager.main.setTVName(name);
-		GameManager.main.save();
 	}
 
 	public void selectCity(int city)
 	{
-		float installCost = City.get(city).installationCost;
-		GameManager.main.spend(installCost);
+		GameManager.main.installIntoCity(city);
+		//UIFunctions.main.loadLevel("weekDay");
 	}
 
 	public void selectSmallCity()

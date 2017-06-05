@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(City))]
 public class GameManager : MonoBehaviour
 {
     private bool tutorialSkipped;
     private float money = 500000f;
     private float audience = 0f;
     private int popularity = 0;
-    private string tvName;
+    private int curDay = 0;
+    private string tvName = "";
     private int city;
+    public Camera activeCam, inactiveCam;
     public static GameManager main;
 
     // Use this for initialization
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        load();
+        //load();
     }
 
     void OnDestroy()
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void setTVName(string tvName)
     {
+        Debug.Log(tvName);
         this.tvName = tvName;
     }
 
@@ -78,6 +80,11 @@ public class GameManager : MonoBehaviour
     public void setCity(int i)
     {
         city = i;
+    }
+
+    public string getTVName()
+    {
+        return tvName;
     }
 
     public int getCity()
@@ -124,5 +131,16 @@ public class GameManager : MonoBehaviour
         popularity = PlayerPrefs.GetInt("popularity");
         city = PlayerPrefs.GetInt("city");
         tvName = PlayerPrefs.GetString("tvName");
+    }
+
+    public void installIntoCity(int i)
+    {
+        float installCost = City.get(i).installationCost;
+        spend(installCost);
+    }
+
+    public void setLookingDay(int day)
+    {
+        curDay = day;
     }
 }
