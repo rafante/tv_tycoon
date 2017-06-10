@@ -49,6 +49,7 @@
      <Compile Include="Assets\Resources\Scripts\Entities\Attraction.cs" />
      <Compile Include="Assets\Resources\Scripts\Entities\Audience.cs" />
      <Compile Include="Assets\Resources\Scripts\Entities\City.cs" />
+     <Compile Include="Assets\Resources\Scripts\HardwareUtils\PictureTaker.cs" />
      <Compile Include="Assets\Resources\Scripts\Management\AttractionsManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Management\GameManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Management\ManagerBase.cs" />

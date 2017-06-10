@@ -41,6 +41,7 @@ public class AttractionsManager : ManagerBase
 
     public void showAttractions()
     {
+        AttractionsListViewer.main.clearItems();
         updateAttractionsBuffer();
         foreach (var attraction in attractionsBuffer)
         {
@@ -50,7 +51,13 @@ public class AttractionsManager : ManagerBase
         }
         AttractionItem addItem = Instantiate(attractionItemPrefab);
         addItem.set(null);
+        addItem.btnCreate.onClick.AddListener(btnCreateAction);
         AttractionsListViewer.main.addAttractionItem(addItem);
+    }
+
+    public void btnCreateAction()
+    {
+        UIFunctions.main.goToScreen(Screens.ATTRACTION);
     }
 
     /*public void addAttractionItem(AttractionItem item)
