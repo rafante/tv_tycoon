@@ -8,7 +8,7 @@ public class UIFunctions : MonoBehaviour
 {
 
 	public GameObject[] objectsToPreserve;
-	public static UIFunctions main;
+	
 	public List<BaseScreen> previousScreens;
 	public List<BaseScreen> nextScreens;
 	public BaseScreen mainScreen;
@@ -16,20 +16,32 @@ public class UIFunctions : MonoBehaviour
 	public BaseScreen currentScreen;
 	public ScreenIndex[] allScreens;
 	public Canvas gameManagerViewer;
+	
+	public List<IScreenHandler> subscribers;
+
+	public static UIFunctions main;
 
 	void Awake()
 	{
 		if (main == null)
+		{
 			main = this;
-		previousScreens = new List<BaseScreen>();
-		nextScreens = new List<BaseScreen>();
-		currentScreen = mainScreen;
+			main.init();
+		}
 	}
 
-	void Start()
+	public void init()
+	{
+		main.previousScreens = new List<BaseScreen>();
+		main.nextScreens = new List<BaseScreen>();
+		main.currentScreen = mainScreen;
+		subscribers = new List<IScreenHandler>();
+	}
+
+	/*void Start()
 	{
 		unloadOutScreens();
-	}
+	}*/
 
 	public void unloadOutScreens()
 	{
@@ -54,6 +66,7 @@ public class UIFunctions : MonoBehaviour
 
 	public void goToScreen(string screenName)
 	{
+		notifyBegin(screenName);
 		BaseScreen screen = findScreenByName(screenName);
 		if(screen == currentScreen)
 			return;
@@ -62,6 +75,23 @@ public class UIFunctions : MonoBehaviour
 		previousScreens.Add(currentScreen);
 		currentScreen.unload();
 		currentScreen = screen;
+		notifyEnd(screenName);
+	}
+
+	public void notifyBegin(string screenName)
+	{
+		foreach (var subscriber in subscribers)
+		{
+			subscriber.beginGoToScreen(screenName);
+		}
+	}
+
+	public void notifyEnd(string screenName)
+	{
+		foreach (var subscriber in subscribers)
+		{
+			subscriber.endGoToScreen(screenName);
+		}
 	}
 
 	public BaseScreen findScreenByName(string screenName)
@@ -117,6 +147,14 @@ public class UIFunctions : MonoBehaviour
 		WWW www = new WWW("https://tvtycoon.herokuapp.com");
 		yield return www;
 		Debug.Log(www.text);
+	}
+
+	public void subscribeToScreenChange(IScreenHandler handler)
+	{
+		if (!subscribers.Contains(handler))
+		{
+			subscribers.Add(handler);
+		}
 	}
 }
 

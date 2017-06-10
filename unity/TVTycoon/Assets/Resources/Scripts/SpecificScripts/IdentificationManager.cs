@@ -9,17 +9,12 @@ public class IdentificationManager : MonoBehaviour
 	public InputField tvNameInp;
 	public Button smCityChoice, mCityChoice, lCityChoice;
 
-	void Awake()
+	void Start()
 	{
 		if (GameManager.main.getCity() > 0)
 		{
-			UIFunctions.main.loadLevel("gameMenu");
+			UIFunctions.main.loadLevel(Screens.GAME_MENU);
 		}
-	}
-	
-	// Use this for initialization
-	void Start ()
-	{
 		setEvents();
 	}
 	

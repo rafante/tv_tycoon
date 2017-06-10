@@ -15,13 +15,13 @@ public class WeekDayManager : MonoBehaviour
 	public void moveToWeekDay(int day)
 	{
 		GameManager.main.setLookingDay(day);
-		UIFunctions.main.loadLevel("dayGrid");
+		UIFunctions.main.loadLevel(Screens.DAY_GRID);
 	}
 
 	public void checkDayGrid(int i)
 	{
 		GameManager.main.setLookingDay(i);
-		UIFunctions.main.loadLevel("dayGrid");
+		UIFunctions.main.loadLevel(Screens.DAY_GRID);
 	}
 
 }

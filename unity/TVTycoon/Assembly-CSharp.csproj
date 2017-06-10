@@ -51,15 +51,20 @@
      <Compile Include="Assets\Resources\Scripts\Entities\City.cs" />
      <Compile Include="Assets\Resources\Scripts\Management\AttractionsManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Management\GameManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\Management\ManagerBase.cs" />
      <Compile Include="Assets\Resources\Scripts\SpecificScripts\AttractionItem.cs" />
      <Compile Include="Assets\Resources\Scripts\SpecificScripts\BaseScreen.cs" />
      <Compile Include="Assets\Resources\Scripts\SpecificScripts\DayGridManager.cs" />
      <Compile Include="Assets\Resources\Scripts\SpecificScripts\GameManagerViewer.cs" />
      <Compile Include="Assets\Resources\Scripts\SpecificScripts\GameMenuManager.cs" />
      <Compile Include="Assets\Resources\Scripts\SpecificScripts\IdentificationManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\SpecificScripts\Initializer.cs" />
      <Compile Include="Assets\Resources\Scripts\SpecificScripts\TutorialChecker.cs" />
      <Compile Include="Assets\Resources\Scripts\SpecificScripts\WeekDayManager.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\UIFunctions.cs" />
+     <Compile Include="Assets\Resources\Scripts\Values\GamePaths.cs" />
+     <Compile Include="Assets\Resources\Scripts\Values\Screens.cs" />
+     <Compile Include="Assets\Resources\Scripts\Viewers\AttractionsListViewer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

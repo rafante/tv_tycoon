@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : ManagerBase
 {
     private bool tutorialSkipped;
     private float money = 500000f;
@@ -12,16 +12,22 @@ public class GameManager : MonoBehaviour
     public Camera activeCam, inactiveCam;
     public static GameManager main;
 
-    // Use this for initialization
-    void Awake()
-    {
-        if (main == null)
-            main = this;
-    }
-
     void Start()
     {
-        //load();
+        if (main == null)
+        {
+            main = this;
+            main.init();
+            UIFunctions.main.subscribeToScreenChange(main);
+            UIFunctions.main.unloadOutScreens();
+            //load();
+        }  
+    }
+    
+    public void init()
+    {
+        activeCam = GameObject.FindGameObjectWithTag("ActiveCam").GetComponent<Camera>();
+        inactiveCam = GameObject.FindGameObjectWithTag("InactiveCam").GetComponent<Camera>();
     }
 
     void OnDestroy()
@@ -142,5 +148,15 @@ public class GameManager : MonoBehaviour
     public void setLookingDay(int day)
     {
         curDay = day;
+    }
+
+    public override void beginGoToScreen(string screenName)
+    {
+        
+    }
+
+    public override void endGoToScreen(string screenName)
+    {
+        
     }
 }
