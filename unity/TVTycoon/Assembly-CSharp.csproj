@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Resources\Scripts\Controllers\CameraControl.cs" />
+     <Compile Include="Assets\Resources\Scripts\Controllers\SceneComponent.cs" />
      <Compile Include="Assets\Resources\Scripts\Entities\Attraction.cs" />
      <Compile Include="Assets\Resources\Scripts\Entities\Audience.cs" />
      <Compile Include="Assets\Resources\Scripts\Entities\City.cs" />
@@ -66,6 +68,7 @@
      <Compile Include="Assets\Resources\Scripts\Values\GamePaths.cs" />
      <Compile Include="Assets\Resources\Scripts\Values\Screens.cs" />
      <Compile Include="Assets\Resources\Scripts\Viewers\AttractionsListViewer.cs" />
+     <None Include="Assets\read me.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
