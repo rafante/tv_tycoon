@@ -5,7 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{BA992100-CD1A-21E8-B242-6EEEE22BD829}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -46,50 +47,53 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Resources\Scripts\Controllers\CameraControl.cs" />
-     <Compile Include="Assets\Resources\Scripts\Controllers\SceneComponent.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entities\Attraction.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entities\Audience.cs" />
-     <Compile Include="Assets\Resources\Scripts\Entities\City.cs" />
-     <Compile Include="Assets\Resources\Scripts\HardwareUtils\PictureTaker.cs" />
-     <Compile Include="Assets\Resources\Scripts\Management\AttractionsManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Management\GameManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\Management\ManagerBase.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\AttractionItem.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\BaseScreen.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\DayGridManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\GameManagerViewer.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\GameMenuManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\IdentificationManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\Initializer.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\TutorialChecker.cs" />
-     <Compile Include="Assets\Resources\Scripts\SpecificScripts\WeekDayManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\UIFunctions.cs" />
-     <Compile Include="Assets\Resources\Scripts\Values\GamePaths.cs" />
-     <Compile Include="Assets\Resources\Scripts\Values\Screens.cs" />
-     <Compile Include="Assets\Resources\Scripts\Viewers\AttractionsListViewer.cs" />
-     <None Include="Assets\read me.txt" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.VR">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Resources\Scripts\Controllers\CameraControl.cs" />
+    <Compile Include="Assets\Resources\Scripts\Entities\Attraction.cs" />
+    <Compile Include="Assets\Resources\Scripts\Entities\Audience.cs" />
+    <Compile Include="Assets\Resources\Scripts\Entities\City.cs" />
+    <Compile Include="Assets\Resources\Scripts\HardwareUtils\PictureTaker.cs" />
+    <Compile Include="Assets\Resources\Scripts\Management\AttractionsManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Management\GameManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Management\ManagerBase.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\AttractionItem.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\BaseScreen.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\DayGridManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\GameManagerViewer.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\GameMenuManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\IdentificationManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\Initializer.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\TutorialChecker.cs" />
+    <Compile Include="Assets\Resources\Scripts\SpecificScripts\WeekDayManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\TycoonFeatures\SceneComponent.cs" />
+    <Compile Include="Assets\Resources\Scripts\TycoonFeatures\SceneComponentController.cs" />
+    <Compile Include="Assets\Resources\Scripts\TycoonFeatures\SpawnPoint.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\UIFunctions.cs" />
+    <Compile Include="Assets\Resources\Scripts\Values\GamePaths.cs" />
+    <Compile Include="Assets\Resources\Scripts\Values\Screens.cs" />
+    <Compile Include="Assets\Resources\Scripts\Values\Tags.cs" />
+    <Compile Include="Assets\Resources\Scripts\Viewers\AttractionsListViewer.cs" />
+    <None Include="Assets\read me.txt" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -99,5 +103,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>

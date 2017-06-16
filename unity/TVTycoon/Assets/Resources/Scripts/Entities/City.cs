@@ -14,6 +14,8 @@ public class City
     public float installationCost;
     public int advertisers;
 
+    public Audience audience;
+
     public static City get(int i)
     {
         if (small == null || medium == null || large == null)
@@ -62,4 +64,9 @@ public class City
             large.advertisers = 500;
         }
     }
+}
+
+public enum CityType
+{
+    SMALL, MEDIUM, LARGE, CAPITAL, METROPOLITAN, METROPOLIS
 }

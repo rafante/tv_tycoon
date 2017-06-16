@@ -1,23 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 
 public class Audience
 {
-
-    private static Audience audience;
-
+    public AgeGroup age;
+    public GenderGroup gender;
+    public ProfessionGroup profession;
+    public MusicalGroup musical;
+    public int peopleNumber;
+    
     private Audience()
     {
-        if (audience == null)
-        {
-            audience = new Audience();
-        }   
+        
     }
 
-    public static Audience get()
+    public Audience createAudience(int population, CityType cityType)
     {
-        return audience;
+        int audienceGroupsNumber = new Random().Next(2, 11);
+        Audience[] audiences = new Audience[audienceGroupsNumber];
+        float malePerc = 100 - new Random().Next(1, 100);
+        float femalePerc = 100 - malePerc;
+        return null;
     }
 
     public void update()
@@ -26,7 +28,22 @@ public class Audience
     }
 }
 
-public class AudienceGroup
+public enum AgeGroup
 {
-    
+    OLD, ADULT, YOUNG, TEEN, CHILD, BABY
+}
+
+public enum GenderGroup
+{
+    MALE, FEMALE
+}
+
+public enum ProfessionGroup
+{
+    NONE, EMPLOYER, SERVICES, COMMERCE, INDUSTRY, UNEMPLOYED
+}
+
+public enum MusicalGroup
+{
+    NONE, JAPANESE, COUNTRY, BLUES, JAZZ
 }
