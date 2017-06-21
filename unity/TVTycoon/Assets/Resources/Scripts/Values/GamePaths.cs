@@ -1,6 +1,7 @@
 public class GamePaths
 {
     public const string TEXTURES = "Graphics/Textures/";
+    public const string ATTRACTION_PICS = "Graphics/Textures/Attraction/Pics";
     public const string MODELS3D = "Graphics/Models3D/";
     public const string ICONS = "Graphics/Icons/";
     public const string ENTITIES = "Scripts/Entities/";

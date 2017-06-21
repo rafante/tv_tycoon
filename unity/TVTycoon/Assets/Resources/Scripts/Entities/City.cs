@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
@@ -20,14 +21,27 @@ public class City
     private string name, seed;
     private DateTime createTime, lastUpdateTime, nextUpdateTime;
     private long updateStamp;
-    private PeopleGroup[] peopleGroups;
+    private List<PeopleGroup> peopleGroups;
 
-    public City()
+    private City()
     {
         createTime = DateTime.Now;
         lastUpdateTime = createTime;
         updateStamp = 1000;
-        Clock.main.scheduleTimeAction(1800, updateImmigration, this);
+        //Clock.main.scheduleTimeAction(1800, updateImmigration, this);
+    }
+
+    public override string ToString()
+    {
+        string text = "name: $name:\npopulation: $population\npeopleGroups:\n";
+        text = text.Replace("$name", name);
+        text = text.Replace("$population", getCurPopulation().ToString());
+        
+        foreach (var peopleGroup in peopleGroups)
+        {
+            text += " " + peopleGroup.ToString();
+        }
+        return text;
     }
 
     public static City get(int i)
@@ -86,7 +100,7 @@ public class City
 
     public void immigrate(PeopleGroup peopleGroup, City destination)
     {
-        for (int i = 0; i < destination.peopleGroups.Length; i++)
+        for (int i = 0; i < destination.peopleGroups.Count; i++)
         {
             if (destination.peopleGroups[i].Equals(peopleGroup))
             {
@@ -94,8 +108,7 @@ public class City
                 return;
             }
         }
-        Array.Resize(ref destination.peopleGroups, destination.peopleGroups.Length + 1);
-        destination.peopleGroups[destination.peopleGroups.Length - 1] = peopleGroup;
+        destination.peopleGroups.Add(peopleGroup);
     }
 
     public List<City> getSuitableCitiesToImmigrate()
@@ -113,28 +126,27 @@ public class City
 
     public static void removeCity(City city)
     {
-        if(!citiesBuffer.Contains(city))
+        if (!citiesBuffer.Contains(city))
             throw new Exception("Tried to remove a city from buffer but there's no such city in the buffer");
         citiesBuffer.Remove(city);
     }
 
     public static int getRandomPopulation(CityType cityType, string seed)
     {
-        Random r = new Random(seed.GetHashCode());
         switch (cityType)
         {
             case CityType.SMALL:
-                return r.Next(100, 25000);
+                return new Random(seed.GetHashCode()).Next(100, 25000);
             case CityType.MEDIUM:
-                return r.Next(25000, 100000);
+                return new Random(seed.GetHashCode()).Next(25000, 100000);
             case CityType.LARGE:
-                return r.Next(100000, 1500000);
+                return new Random(seed.GetHashCode()).Next(100000, 1500000);
             case CityType.CAPITAL:
-                return r.Next(1500000, 5000000);
+                return new Random(seed.GetHashCode()).Next(1500000, 5000000);
             case CityType.METROPOLITAN:
-                return r.Next(500000, 2000000);
+                return new Random(seed.GetHashCode()).Next(500000, 2000000);
             case CityType.METROPOLIS:
-                return r.Next(5000000, 20000000);
+                return new Random(seed.GetHashCode()).Next(5000000, 20000000);
             default:
                 throw new ArgumentOutOfRangeException("cityType", cityType, null);
         }
@@ -147,16 +159,16 @@ public class City
         int population = getRandomPopulation(cityType, city.seed);
         city.name = name;
 
-        Random random = new Random();
-        int maleNumber = random.Next(1, population);
+        int maleNumber = new Random().Next(50, population);
         int femaleNumber = population - maleNumber;
 
-        int maleGroups = random.Next(1, maxGroupsForGender + 1);
-        int femaleGroups = random.Next(1, maxGroupsForGender + 1);
-        city.peopleGroups = new PeopleGroup[maleGroups + femaleGroups];
+        int maleGroups = new Random().Next(1, maxGroupsForGender + 1);
+        int femaleGroups = new Random().Next(1, maxGroupsForGender + 1);
+        city.peopleGroups = new List<PeopleGroup>();
 
         int groupIndex = 0;
-
+    
+        Debug.Log("\nMALE GROUPS:\n");
         for (int i = 0; i < maleGroups; i++)
         {
             int _maleNumber;
@@ -166,16 +178,17 @@ public class City
             }
             else
             {
-                _maleNumber = random.Next(1, maleNumber);
+                _maleNumber = new Random().Next(1, maleNumber);
                 maleNumber -= _maleNumber;
             }
 
-            city.peopleGroups[groupIndex] = new PeopleGroup(People.randomPeople(city.seed), _maleNumber);
-            city.peopleGroups[groupIndex].people.gender = PeopleGender.MALE;
-
-            groupIndex++;
+            PeopleGroup group = new PeopleGroup(People.randomPeople(city.seed), _maleNumber);
+            group.people.gender = PeopleGender.MALE;
+            city.addPeopleGroup(group);
+            Debug.Log(group.people);
         }
 
+        Debug.Log("\nFEMALE GROUPS:\n");
         for (int i = 0; i < femaleGroups; i++)
         {
             int _femaleNumber;
@@ -185,16 +198,31 @@ public class City
             }
             else
             {
-                _femaleNumber = random.Next(1, femaleNumber);
+                _femaleNumber = new Random().Next(1, femaleNumber);
                 femaleNumber -= _femaleNumber;
             }
 
-            city.peopleGroups[groupIndex] = new PeopleGroup(People.randomPeople(city.seed), _femaleNumber);
-
-            groupIndex++;
+            PeopleGroup group = new PeopleGroup(People.randomPeople(city.seed), _femaleNumber);
+            group.people.gender = PeopleGender.FEMALE;
+            city.addPeopleGroup(group);
+            Debug.Log(group.people);
         }
 
         return city;
+    }
+
+    private void addPeopleGroup(PeopleGroup group)
+    {
+        for (int i = 0; i < peopleGroups.Count; i++)
+        {
+            var peopleGroup = peopleGroups[i];
+            if (peopleGroup.people == group.people)
+            {
+                peopleGroup.number += group.number;
+                return;
+            }
+        }
+        peopleGroups.Add(group);
     }
 
     public static void setCities()
@@ -224,9 +252,19 @@ public class City
             large.installationCost = 300000;
         }
     }
+
+    public string getName()
+    {
+        return name;
+    }
+
+    public List<PeopleGroup> getPeopleGroups()
+    {
+        return peopleGroups;
+    }
 }
 
-public struct PeopleGroup
+public class PeopleGroup
 {
     public People people;
     public int number;
@@ -235,6 +273,11 @@ public struct PeopleGroup
     {
         this.people = people;
         this.number = number;
+    }
+
+    public override string ToString()
+    {
+        return "PeopleGroup:\n number: " + number + "\n people: " + people.ToString();
     }
 
     public PeopleGroup getPeople(int i)

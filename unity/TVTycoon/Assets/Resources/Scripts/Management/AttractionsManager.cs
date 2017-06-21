@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AttractionsManager : ManagerBase
 {
     private SortedList<int, Attraction> attractionsBuffer;
-    private SortedList<int, AttractionItem> attractionItems;
     private Attraction attractionBuffered;
     public Attraction curAttraction;
     public AttractionItem attractionItemPrefab;
@@ -26,38 +26,17 @@ public class AttractionsManager : ManagerBase
     public void init()
     {
         attractionsBuffer = new SortedList<int, Attraction>();
-        attractionItems = new SortedList<int, AttractionItem>();
         attractionBuffered = null;
         curAttraction = null;
 
         //temporary
-        attractionsBuffer.Add(1, new Attraction(getNewAttractionId(), "Bob Esponja", GamePaths.TEXTURES + "spongebob", 3,1,4));
+        attractionsBuffer.Add(1,
+            new Attraction(getNewAttractionId(), "Bob Esponja", GamePaths.TEXTURES + "spongebob", 3, 1, 4));
     }
 
     private int getNewAttractionId()
     {
         return ++curAttractionId;
-    }
-
-    public void showAttractions()
-    {
-        AttractionsListViewer.main.clearItems();
-        updateAttractionsBuffer();
-        foreach (var attraction in attractionsBuffer)
-        {
-            AttractionItem attractionItem = Instantiate(attractionItemPrefab);
-            attractionItem.set(attraction.Value);
-            AttractionsListViewer.main.addAttractionItem(attractionItem);
-        }
-        AttractionItem addItem = Instantiate(attractionItemPrefab);
-        addItem.set(null);
-        addItem.btnCreate.onClick.AddListener(btnCreateAction);
-        AttractionsListViewer.main.addAttractionItem(addItem);
-    }
-
-    public void btnCreateAction()
-    {
-        UIFunctions.main.goToScreen(Screens.ATTRACTION);
     }
 
     /*public void addAttractionItem(AttractionItem item)
@@ -103,9 +82,9 @@ public class AttractionsManager : ManagerBase
         return getAttraction(attractionId).popularity;
     }
 
-    public float getValue(int attractionId)
+    public float getAdsValue(int attractionId)
     {
-        return getAttraction(attractionId).value;
+        return getAttraction(attractionId).adsValue;
     }
 
     public override void beginGoToScreen(string screenName)
@@ -114,8 +93,28 @@ public class AttractionsManager : ManagerBase
 
     public override void endGoToScreen(string screenName)
     {
-        if (!screenName.Equals(Screens.ATTRACTIONS_LIST))
-            return;
-        showAttractions();
+        if (screenName.Equals(Screens.ATTRACTIONS_LIST))
+            AttractionsListViewer.main.init();
+    }
+
+    public Attraction[] getAll()
+    {
+        updateAttractionsBuffer();
+        return attractionsBuffer.Values.ToArray();
+    }
+
+    public void setAttraction(Attraction attraction = null)
+    {
+        Attraction attr = attraction == null ? createNew() : attraction;
+        if (attraction == null)
+            addAttraction(attr);
+        AttractionEditor.main.set(attr);
+        UIFunctions.main.goToScreen(Screens.ATTRACTION);
+    }
+
+    private void addAttraction(Attraction attr)
+    {
+        if(!attractionsBuffer.ContainsValue(attr))
+            attractionsBuffer.Add(getNewAttractionId(), attr);
     }
 }

@@ -14,7 +14,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AttractionEditor.cs" />
     <Compile Include="Assets\Resources\Scripts\Controllers\CameraControl.cs" />
     <Compile Include="Assets\Resources\Scripts\Entities\Attraction.cs" />
     <Compile Include="Assets\Resources\Scripts\Entities\City.cs" />
@@ -71,12 +72,19 @@
     <Compile Include="Assets\Resources\Scripts\TycoonFeatures\SceneComponent.cs" />
     <Compile Include="Assets\Resources\Scripts\TycoonFeatures\SceneComponentController.cs" />
     <Compile Include="Assets\Resources\Scripts\TycoonFeatures\SpawnPoint.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\DurationBlocks.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\UIFunctions.cs" />
     <Compile Include="Assets\Resources\Scripts\Utils\Clock.cs" />
+    <Compile Include="Assets\Resources\Scripts\Utils\WordGenerator.cs" />
     <Compile Include="Assets\Resources\Scripts\Values\GamePaths.cs" />
     <Compile Include="Assets\Resources\Scripts\Values\Screens.cs" />
     <Compile Include="Assets\Resources\Scripts\Values\Tags.cs" />
     <Compile Include="Assets\Resources\Scripts\Viewers\AttractionsListViewer.cs" />
+    <Compile Include="Assets\Resources\Scripts\Viewers\CitiesViewer.cs" />
+    <Compile Include="Assets\Resources\Scripts\Viewers\CityViewer.cs" />
+    <Compile Include="Assets\Resources\Scripts\Viewers\PeopleGroupViewer.cs" />
+    <Compile Include="Assets\Resources\Scripts\Viewers\PeopleGroupsViewer.cs" />
+    <Compile Include="Assets\Resources\Scripts\Viewers\PictureSelection.cs" />
     <None Include="Assets\read me.txt" />
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

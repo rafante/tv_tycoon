@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
+[RequireComponent(typeof(Clock))]
 public class GameManager : ManagerBase
 {
     private bool tutorialSkipped;
@@ -20,8 +22,18 @@ public class GameManager : ManagerBase
             main.init();
             UIFunctions.main.subscribeToScreenChange(main);
             UIFunctions.main.unloadOutScreens();
-            //load();
+            City city1 = City.createCity("Teste1", CityType.LARGE, "teste");
+            Debug.Log(" ################## Teste 1 ###################");
+            City city2 = City.createCity("Teste2", CityType.MEDIUM, "teste2");
+            Debug.Log(" ################## Teste 2 ###################");
+            City city3 = City.createCity("Teste3", CityType.SMALL, "teste3");
+            Debug.Log(" ################## Teste 3 ###################");
         }  
+    }
+
+    public void teste()
+    {
+        
     }
     
     public void init()

@@ -7,19 +7,13 @@ public class AttractionItem : MonoBehaviour
 	public Attraction attraction;
 	public int attractionId;
 	public float updateSpan = 5;
-	public Image image, audienceIcon, popularityIcon, valueIcon;
-	public Text attractionName, audienceTxt, popularityTxt, valueTxt, nameLbl;
-	public Button btnCreate;
+	public Image image, audienceIcon, popularityIcon, adsValueIcon;
+	public Text attractionName, audienceTxt, popularityTxt, adsValueTxt, nameLbl;
+	public Button btnAttraction, btnCreate;
 
 	void Start()
 	{
 		updateUI();
-	}
-
-	public void create()
-	{
-		AttractionsManager.main.curAttraction = AttractionsManager.main.createNew();
-		UIFunctions.main.goToScreen(Screens.ATTRACTION);
 	}
 
 	public void set(Attraction attraction)
@@ -47,11 +41,11 @@ public class AttractionItem : MonoBehaviour
 		attractionName.gameObject.SetActive(existent);
 		audienceTxt.gameObject.SetActive(existent);
 		popularityTxt.gameObject.SetActive(existent);
-		valueTxt.gameObject.SetActive(existent);
+		adsValueTxt.gameObject.SetActive(existent);
 
 		audienceIcon.gameObject.SetActive(existent);
 		popularityIcon.gameObject.SetActive(existent);
-		valueIcon.gameObject.SetActive(existent);
+		adsValueIcon.gameObject.SetActive(existent);
 		nameLbl.gameObject.SetActive(existent);
 		
 		if (existent)
@@ -61,7 +55,7 @@ public class AttractionItem : MonoBehaviour
 			attractionName.text = attraction.name;
 			audienceTxt.text = attraction.audience.ToString();
 			popularityTxt.text = attraction.popularity.ToString();
-			valueTxt.text = attraction.value.ToString();
+			adsValueTxt.text = attraction.adsValue.ToString();
 		}
 	}
 
@@ -71,7 +65,7 @@ public class AttractionItem : MonoBehaviour
 		attractionName.gameObject.SetActive(!attractionName.gameObject.activeSelf);
 		audienceTxt.gameObject.SetActive(!audienceTxt.gameObject.activeSelf);
 		popularityTxt.gameObject.SetActive(!popularityTxt.gameObject.activeSelf);
-		valueTxt.gameObject.SetActive(!valueTxt.gameObject.activeSelf);
+		adsValueTxt.gameObject.SetActive(!adsValueTxt.gameObject.activeSelf);
 	}
 
 	IEnumerator updateValues()
@@ -86,7 +80,7 @@ public class AttractionItem : MonoBehaviour
 			attractionName.text = AttractionsManager.main.getName(attractionId);
 			audienceTxt.text = AttractionsManager.main.getAudience(attractionId).ToString();
 			popularityTxt.text = AttractionsManager.main.getPopularity(attractionId).ToString();
-			valueTxt.text = AttractionsManager.main.getValue(attractionId).ToString();
+			adsValueTxt.text = AttractionsManager.main.getAdsValue(attractionId).ToString();
 			
 		}
 	}
