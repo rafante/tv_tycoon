@@ -50,9 +50,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AttractionChapterItem.cs" />
     <Compile Include="Assets\AttractionEditor.cs" />
     <Compile Include="Assets\Resources\Scripts\Controllers\CameraControl.cs" />
     <Compile Include="Assets\Resources\Scripts\Entities\Attraction.cs" />
+    <Compile Include="Assets\Resources\Scripts\Entities\AttractionChapter.cs" />
     <Compile Include="Assets\Resources\Scripts\Entities\City.cs" />
     <Compile Include="Assets\Resources\Scripts\Entities\People.cs" />
     <Compile Include="Assets\Resources\Scripts\HardwareUtils\PictureTaker.cs" />
@@ -85,7 +87,14 @@
     <Compile Include="Assets\Resources\Scripts\Viewers\PeopleGroupViewer.cs" />
     <Compile Include="Assets\Resources\Scripts\Viewers\PeopleGroupsViewer.cs" />
     <Compile Include="Assets\Resources\Scripts\Viewers\PictureSelection.cs" />
+    <None Include="Assets\Resources\Fonts\Readme.txt" />
+    <None Include="Assets\Resources\Fonts\tetricide.txt" />
+    <None Include="Assets\Resources\Fonts\1001fonts-halo-eula.txt" />
+    <None Include="Assets\Resources\Fonts\kirbynokirakizzu.txt" />
     <None Include="Assets\read me.txt" />
+    <None Include="Assets\Resources\Fonts\Halo 3 Font Readme.txt" />
+    <None Include="Assets\Resources\Fonts\zerovelocity.txt" />
+    <None Include="Assets\Resources\Fonts\license.txt" />
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>

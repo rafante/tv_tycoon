@@ -36,7 +36,7 @@ public class City
         string text = "name: $name:\npopulation: $population\npeopleGroups:\n";
         text = text.Replace("$name", name);
         text = text.Replace("$population", getCurPopulation().ToString());
-        
+
         foreach (var peopleGroup in peopleGroups)
         {
             text += " " + peopleGroup.ToString();
@@ -167,45 +167,51 @@ public class City
         city.peopleGroups = new List<PeopleGroup>();
 
         int groupIndex = 0;
-    
-        Debug.Log("\nMALE GROUPS:\n");
+
         for (int i = 0; i < maleGroups; i++)
         {
             int _maleNumber;
             if (i == maleGroups - 1)
             {
+                if (maleNumber <= 0)
+                    maleNumber = 1;
                 _maleNumber = maleNumber;
             }
             else
             {
-                _maleNumber = new Random().Next(1, maleNumber);
+                if (maleNumber > 1)
+                    _maleNumber = new Random().Next(1, maleNumber);
+                else
+                    _maleNumber = 1;
                 maleNumber -= _maleNumber;
             }
 
             PeopleGroup group = new PeopleGroup(People.randomPeople(city.seed), _maleNumber);
             group.people.gender = PeopleGender.MALE;
             city.addPeopleGroup(group);
-            Debug.Log(group.people);
         }
 
-        Debug.Log("\nFEMALE GROUPS:\n");
         for (int i = 0; i < femaleGroups; i++)
         {
             int _femaleNumber;
             if (i == maleGroups - 1)
             {
+                if (femaleNumber <= 0)
+                    femaleNumber = 1;
                 _femaleNumber = femaleNumber;
             }
             else
             {
-                _femaleNumber = new Random().Next(1, femaleNumber);
+                if (femaleNumber > 1)
+                    _femaleNumber = new Random().Next(1, femaleNumber);
+                else
+                    _femaleNumber = 1;
                 femaleNumber -= _femaleNumber;
             }
 
             PeopleGroup group = new PeopleGroup(People.randomPeople(city.seed), _femaleNumber);
             group.people.gender = PeopleGender.FEMALE;
             city.addPeopleGroup(group);
-            Debug.Log(group.people);
         }
 
         return city;

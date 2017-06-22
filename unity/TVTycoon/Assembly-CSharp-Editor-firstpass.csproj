@@ -51,7 +51,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\Editor\JetBrains\Unity3DRider.cs" />
+    <None Include="Assets\Resources\Fonts\Readme.txt" />
+    <None Include="Assets\Resources\Fonts\tetricide.txt" />
+    <None Include="Assets\Resources\Fonts\1001fonts-halo-eula.txt" />
+    <None Include="Assets\Resources\Fonts\kirbynokirakizzu.txt" />
     <None Include="Assets\read me.txt" />
+    <None Include="Assets\Resources\Fonts\Halo 3 Font Readme.txt" />
+    <None Include="Assets\Resources\Fonts\zerovelocity.txt" />
+    <None Include="Assets\Resources\Fonts\license.txt" />
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>

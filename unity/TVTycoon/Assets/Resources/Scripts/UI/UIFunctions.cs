@@ -60,7 +60,7 @@ public class UIFunctions : MonoBehaviour
 	public void resetNavigation()
 	{
 		previousScreens.Clear();
-		previousScreens.Add(findScreenByName("gameMenu"));
+		previousScreens.Add(findScreenByName(Screens.GAME_MENU));
 		lastScreen = previousScreens[0];
 	}
 
@@ -117,12 +117,7 @@ public class UIFunctions : MonoBehaviour
 	private void screenNavigation(int i, List<BaseScreen> scenes)
 	{
 		BaseScreen screen = scenes[scenes.Count - i];
-		screen.load();
-		lastScreen = currentScreen;
-		lastScreen.unload();
-		currentScreen = screen;
-		scenes.Remove(screen);
-		
+		goToScreen(screen.name);
 	}
 	
 	public void loadLevel(string sceneName)

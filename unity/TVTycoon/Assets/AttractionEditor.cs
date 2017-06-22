@@ -28,11 +28,11 @@ public class AttractionEditor : MonoBehaviour
     {
         if (attraction != null)
         {
-            audienceTxt.text = attraction.audience.ToString();
-            popularityTxt.text = attraction.popularity.ToString();
-            freshnessTxt.text = attraction.freshness.ToString();
-            adsValueTxt.text = attraction.adsValue.ToString();
-            valueGeneratedTxt.text = attraction.valueGenerated.ToString();
+//            audienceTxt.text = attraction.audience.ToString();
+//            popularityTxt.text = attraction.popularity.ToString();
+//            freshnessTxt.text = attraction.freshness.ToString();
+//            adsValueTxt.text = attraction.adsValue.ToString();
+//            valueGeneratedTxt.text = attraction.valueGenerated.ToString();
         }
     }
 
